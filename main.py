@@ -4,7 +4,7 @@ history_random = []
 history_calculate = [] 
 
 def main():
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~" * 78)
     while True:
         try:
             request = int(input("What do u want? \nCalculate - 1 \nHistory - 2 \nRandom - 3 \nBattleship - 4 \n3 Dices - 5 \nExit - 6 \n>>> "))
@@ -29,7 +29,7 @@ def main():
             print(f"I have no idea, what do u mean by {request}, sorry")
 
 def calculator():
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~" * 78)
     while True:
         try:
             x = int(input("Write the first number: "))
@@ -63,7 +63,7 @@ def calculator():
             break
 
 def history():
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~" * 78)
     print(f"History of calculate numbers: \n{history_calculate} \nHistory of random numbers: \n{history_random}")
     action = int(input("What's next? \nClear - 1 \nCalculate - 2 \nRandom - 3 \nBattleship - 4 \nExit - 5\n >>>"))
     if action == 1:
@@ -91,11 +91,11 @@ def history():
         print("Bye bye")
 
 def randomizer():
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~" * 78)
     print("You have to write a minimal and maximal number: ")
-    min = int(input("Write a minimal number \n>>>"))
-    max = int(input("Write a maximal number \n>>>"))
-    print(randint(min, max))
+    min_user = int(input("Write a minimal number \n>>>"))
+    max_user = int(input("Write a maximal number \n>>>"))
+    print(randint(min_user, max_user))
     action = int(input("What's next? \nCalculate -1 \nHistory - 2 \nBattleship - 3 \nDices - 4 \nExit - 5 \n>>> "))
     if action == 1:
         calculator()
@@ -112,7 +112,7 @@ def randomizer():
         print(f"I have no idea what {action} means")
 
 def battle():
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~" * 78)
     board = []
     for x in range(0, 5):
         board.append(["O"] * 5)

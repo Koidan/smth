@@ -117,7 +117,7 @@ def battle():
             print(" ".join(row))
 
     print_board(board)
-
+    print("You have to guess where is my ship: row 0 - 4, col 0 - 4, you have 3 attempts.")
     def random_row(board):
         return randint(0, len(board) - 1)
     random_row(board)

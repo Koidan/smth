@@ -1,13 +1,13 @@
-from random import randint
+from random import randint 
 
 history_random = []
-history_calculate = []
+history_calculate = [] 
 
 def main():
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     while True:
         try:
-            request = int(input("What do u want? \nCalculate - 1 \nHistory - 2 \nRandom - 3 \nBattleship - 4 \nExit - 5 \n>>> "))
+            request = int(input("What do u want? \nCalculate - 1 \nHistory - 2 \nRandom - 3 \nBattleship - 4 \n3 Dices - 5 \nExit - 6 \n>>> "))
         except ValueError:
             print("Write correct operation")
             continue
@@ -19,8 +19,10 @@ def main():
             randomizer()
         elif request == 4:
             battle()
-            break
         elif request == 5:
+            for i in range(3):
+                print(randint(1,6))
+        elif request == 6:
             print("Existing, bye")
             break
         else:
@@ -90,11 +92,11 @@ def history():
 
 def randomizer():
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("You have to write a minimal n maximal number: ")
+    print("You have to write a minimal and maximal number: ")
     min = int(input("Write a minimal number \n>>>"))
     max = int(input("Write a maximal number \n>>>"))
     print(randint(min, max))
-    action = int(input("What's next? \nCalculate -1 \nHistory - 2 \nBattleship - 3 \nExit - 4 \n>>> "))
+    action = int(input("What's next? \nCalculate -1 \nHistory - 2 \nBattleship - 3 \nDices - 4 \nExit - 5 \n>>> "))
     if action == 1:
         calculator()
     elif action == 2:
@@ -102,9 +104,12 @@ def randomizer():
     elif action == 3:
         battle()
     elif action == 4:
+        for i in range(3):
+            print(randint(1,6))
+    elif action == 5:
         print("Bye bye")
     else:
-        print("idk")
+        print(f"I have no idea what {action} means")
 
 def battle():
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
@@ -144,7 +149,8 @@ def battle():
                     
                     print_board(board)
         else: 
-            print("Game Over")         
+            print("Game Over")
+            print(f"Ship was in row - {ship_row} and col - {ship_col}")         
 
 if __name__ == "__main__":
     main()
